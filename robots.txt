@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cristianporco.it/app/aliasbuilder/sitemap.xml

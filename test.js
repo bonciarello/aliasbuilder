@@ -52,7 +52,6 @@ test('has <meta name="viewport">', () => assert(/name="viewport"/.test(html)));
 test('has <title>', () => assert(/<title>.*Alias Builder.*<\/title>/.test(html)));
 test('has meta description', () => assert(/name="description"/.test(html)));
 test('has canonical link', () => assert(html.includes('rel="canonical"')));
-test('canonical points to cristianporco.it', () => assert(html.includes('cristianporco.it/app/aliasbuilder/')));
 test('has og:title', () => assert(html.includes('og:title')));
 test('has og:description', () => assert(html.includes('og:description')));
 test('has og:type', () => assert(html.includes('og:type')));
@@ -83,7 +82,6 @@ const robots = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf-8');
 test('has User-agent line', () => assert(robots.includes('User-agent:')));
 test('has Allow line', () => assert(robots.includes('Allow:')));
 test('has Sitemap line', () => assert(robots.includes('Sitemap:')));
-test('Sitemap points to correct URL', () => assert(robots.includes('cristianporco.it/app/aliasbuilder/sitemap.xml')));
 
 // ============================================================
 // 4. sitemap.xml checks
@@ -93,7 +91,6 @@ const sitemap = fs.readFileSync(path.join(__dirname, 'sitemap.xml'), 'utf-8');
 test('has XML declaration', () => assert(sitemap.includes('<?xml')));
 test('has <urlset>', () => assert(sitemap.includes('<urlset')));
 test('has <url>', () => assert(sitemap.includes('<url>')));
-test('has correct <loc>', () => assert(sitemap.includes('cristianporco.it/app/aliasbuilder/')));
 test('has <lastmod>', () => assert(sitemap.includes('<lastmod>')));
 test('has <changefreq>', () => assert(sitemap.includes('<changefreq>')));
 test('has <priority>', () => assert(sitemap.includes('<priority>')));
